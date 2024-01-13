@@ -85,10 +85,10 @@ public class Markers
 		String iconName = "";
 		if (entity instanceof Villager)
 		{
-			// If the profession name contains any colons, replace them with double underscores.
-			final profession villagerProfession = ((Villager)entity).getVillagerData().getProfession();
-			if villagerProfession != null {
-				iconName = .toString().replace(":","__");
+			final VillagerProfession villagerProfession = ((Villager)entity).getVillagerData().getProfession();
+			if (villagerProfession != null) {
+				// If the profession name contains any colons, replace them with double underscores.
+				iconName = villagerProfession.toString().replace(":","__");
 			}
 		}
 		else if (entity instanceof WanderingTrader)
